@@ -5,6 +5,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.css';
 import './assets/css/index.css';
 
 new Vue({
+  router,
   el: '#app',
   render: h => h(App)
 })
