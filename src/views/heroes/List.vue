@@ -1,210 +1,27 @@
 <template>
     <div>
         <h2 class="sub-header">英雄列表</h2>
-        <a class="btn btn-success" href="add.html">添加</a>
+        <!-- <a class="btn btn-success" href="add.html">添加</a> -->
+        <router-link class="btn btn-success" to="/heroes/add">添加</router-link>
         <div class="table-responsive">
           <table class="table table-striped">
             <thead>
               <tr>
-                <th>#</th>
-                <th>Header</th>
-                <th>Header</th>
-                <th>Header</th>
-                <th>Header</th>
+                <th>id</th>
+                <th>姓名</th>
+                <th>性别</th>
                 <th>操作</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>1,001</td>
-                <td>Lorem</td>
-                <td>ipsum</td>
-                <td>dolor</td>
-                <td>sit</td>
+              <tr v-for="(item,index) in list" :key="item.id">
+                <td>{{ index + 1 }}</td>
+                <td>{{ item.name }}</td>
+                <td>{{ item.gender }}</td>
                 <td>
-                  <a href="edit.html">edit</a>
+                  <router-link :to="'/heroes/'+ item.id">edit</router-link>       
                   &nbsp;&nbsp;
-                  <a href="javascript:window.confirm('Are you sure?')">delete</a>
-                </td>
-              </tr>
-              <tr>
-                <td>1,002</td>
-                <td>amet</td>
-                <td>consectetur</td>
-                <td>adipiscing</td>
-                <td>elit</td>
-                <td>
-                  <a href="edit.html">edit</a>
-                  &nbsp;&nbsp;
-                  <a href="javascript:window.confirm('Are you sure?')">delete</a>
-                </td>
-              </tr>
-              <tr>
-                <td>1,003</td>
-                <td>Integer</td>
-                <td>nec</td>
-                <td>odio</td>
-                <td>Praesent</td>
-                <td>
-                  <a href="edit.html">edit</a>
-                  &nbsp;&nbsp;
-                  <a href="javascript:window.confirm('Are you sure?')">delete</a>
-                </td>
-              </tr>
-              <tr>
-                <td>1,003</td>
-                <td>libero</td>
-                <td>Sed</td>
-                <td>cursus</td>
-                <td>ante</td>
-                <td>
-                  <a href="edit.html">edit</a>
-                  &nbsp;&nbsp;
-                  <a href="javascript:window.confirm('Are you sure?')">delete</a>
-                </td>
-              </tr>
-              <tr>
-                <td>1,004</td>
-                <td>dapibus</td>
-                <td>diam</td>
-                <td>Sed</td>
-                <td>nisi</td>
-                <td>
-                  <a href="edit.html">edit</a>
-                  &nbsp;&nbsp;
-                  <a href="javascript:window.confirm('Are you sure?')">delete</a>
-                </td>
-              </tr>
-              <tr>
-                <td>1,005</td>
-                <td>Nulla</td>
-                <td>quis</td>
-                <td>sem</td>
-                <td>at</td>
-                <td>
-                  <a href="edit.html">edit</a>
-                  &nbsp;&nbsp;
-                  <a href="javascript:window.confirm('Are you sure?')">delete</a>
-                </td>
-              </tr>
-              <tr>
-                <td>1,006</td>
-                <td>nibh</td>
-                <td>elementum</td>
-                <td>imperdiet</td>
-                <td>Duis</td>
-                <td>
-                  <a href="edit.html">edit</a>
-                  &nbsp;&nbsp;
-                  <a href="javascript:window.confirm('Are you sure?')">delete</a>
-                </td>
-              </tr>
-              <tr>
-                <td>1,007</td>
-                <td>sagittis</td>
-                <td>ipsum</td>
-                <td>Praesent</td>
-                <td>mauris</td>
-                <td>
-                  <a href="edit.html">edit</a>
-                  &nbsp;&nbsp;
-                  <a href="javascript:window.confirm('Are you sure?')">delete</a>
-                </td>
-              </tr>
-              <tr>
-                <td>1,008</td>
-                <td>Fusce</td>
-                <td>nec</td>
-                <td>tellus</td>
-                <td>sed</td>
-                <td>
-                  <a href="edit.html">edit</a>
-                  &nbsp;&nbsp;
-                  <a href="javascript:window.confirm('Are you sure?')">delete</a>
-                </td>
-              </tr>
-              <tr>
-                <td>1,009</td>
-                <td>augue</td>
-                <td>semper</td>
-                <td>porta</td>
-                <td>Mauris</td>
-                <td>
-                  <a href="edit.html">edit</a>
-                  &nbsp;&nbsp;
-                  <a href="javascript:window.confirm('Are you sure?')">delete</a>
-                </td>
-              </tr>
-              <tr>
-                <td>1,010</td>
-                <td>massa</td>
-                <td>Vestibulum</td>
-                <td>lacinia</td>
-                <td>arcu</td>
-                <td>
-                  <a href="edit.html">edit</a>
-                  &nbsp;&nbsp;
-                  <a href="javascript:window.confirm('Are you sure?')">delete</a>
-                </td>
-              </tr>
-              <tr>
-                <td>1,011</td>
-                <td>eget</td>
-                <td>nulla</td>
-                <td>Class</td>
-                <td>aptent</td>
-                <td>
-                  <a href="edit.html">edit</a>
-                  &nbsp;&nbsp;
-                  <a href="javascript:window.confirm('Are you sure?')">delete</a>
-                </td>
-              </tr>
-              <tr>
-                <td>1,012</td>
-                <td>taciti</td>
-                <td>sociosqu</td>
-                <td>ad</td>
-                <td>litora</td>
-                <td>
-                  <a href="edit.html">edit</a>
-                  &nbsp;&nbsp;
-                  <a href="javascript:window.confirm('Are you sure?')">delete</a>
-                </td>
-              </tr>
-              <tr>
-                <td>1,013</td>
-                <td>torquent</td>
-                <td>per</td>
-                <td>conubia</td>
-                <td>nostra</td>
-                <td>
-                  <a href="edit.html">edit</a>
-                  &nbsp;&nbsp;
-                  <a href="javascript:window.confirm('Are you sure?')">delete</a>
-                </td>
-              </tr>
-              <tr>
-                <td>1,014</td>
-                <td>per</td>
-                <td>inceptos</td>
-                <td>himenaeos</td>
-                <td>Curabitur</td>
-                <td>
-                  <a href="edit.html">edit</a>
-                  &nbsp;&nbsp;
-                  <a href="javascript:window.confirm('Are you sure?')">delete</a>
-                </td>
-              </tr>
-              <tr>
-                <td>1,015</td>
-                <td>sodales</td>
-                <td>ligula</td>
-                <td>in</td>
-                <td>libero</td>
-                <td>
-                  <a href="edit.html">edit</a>
-                  &nbsp;&nbsp;
-                  <a href="javascript:window.confirm('Are you sure?')">delete</a>
+                  <a @click.prevent="handleDelete(item.id)" href="javascript:void(0)">delete</a>
                 </td>
               </tr>
             </tbody>
@@ -214,9 +31,53 @@
 </template>
 
 <script>
+    // 导入axios模块
+    import axios from 'axios';
     //导出列表组件
     export default {
-
+        
+        data() {
+          return {
+            list: []
+          }
+        },
+        //发送请求，获取英雄列表
+        created() {
+         this.renderList();
+        },
+        methods: {
+           renderList() {
+              axios
+                .get('http://localhost:3000/heroes')
+                .then((response) => {
+                  
+                  if(response.status === 200) {
+                    this.list = response.data;
+                  }
+                })
+                .catch((err) => {
+                  console.log(err);
+                })
+          },
+          handleDelete(id) {
+            if(!confirm('确定删除吗')) {
+              return;
+            };
+            //发送删除请求
+            axios
+              .delete('http://localhost:3000/heroes/'+ id)
+              .then((response) => {
+                  if(response.status === 200) {
+                    //重新渲染
+                    this.renderList();
+                  }
+              })
+              .catch((err) => {
+                console.log(err);
+              })
+          }
+        }
+        
     };
 </script>
 
